@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink-950 text-slate-200 font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-electric-400/30 text-electric-50;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-electric-400 px-6 py-3 text-sm font-semibold text-ink-950 transition-all duration-300 hover:bg-electric-300 hover:shadow-[0_0_30px_rgba(192,132,252,0.5)] active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink-600 px-6 py-3 text-sm font-semibold text-slate-200 transition-all duration-300 hover:border-electric-400 hover:text-electric-300 active:scale-95;
+  }
+
+  .card-surface {
+    @apply rounded-2xl border border-ink-700/60 bg-ink-850/60 backdrop-blur-sm transition-all duration-300;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-electric-400;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 24px rgba(192, 132, 252, 0.35);
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0c14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2236;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #283050;
+}
